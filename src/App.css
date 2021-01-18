@@ -2,7 +2,7 @@
   margin: auto;
   min-height: 50vh;
   color: white;
-  background: linear-gradient(rgba(28, 75, 99, 0.7), rgba(28, 75, 99, 0.7)),
+  background: linear-gradient(#171652, #1c4b63b3),
     url("images/nicolas-j-leclercq-qDLLP0yP7FU-unsplash.jpg") center/cover
       no-repeat;
   display: flex;
@@ -12,6 +12,7 @@
 .header-content {
   width: 60%;
   margin: auto;
+  margin-bottom: 2em;
 }
 
 .header-content h1 {
@@ -23,6 +24,7 @@
 }
 
 .flex-horizontal {
+  margin-top: 5px;
   display: flex;
   height: 3em;
 }

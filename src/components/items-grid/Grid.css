@@ -1,0 +1,8 @@
+.grid-items {
+  padding: 4em 7em 3em;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill, 1fr);
+  grid-column-gap: 2em;
+  grid-row-gap: 5em;
+}
