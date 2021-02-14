@@ -1,0 +1,52 @@
+.rating-field {
+  position: relative;
+  background-color: #000;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.icon {
+  font-size: 3em;
+}
+
+.rating-field h3 {
+  font-size: 1.5em;
+}
+
+.rating-field p {
+  font-size: 1.5em;
+}
+
+.value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.yellow {
+  color: #e2b616;
+}
+
+.green {
+  color: #2ee216;
+}
+
+.orange {
+  color: #e21620;
+}
+
+.blue {
+  color: #167fe2;
+}
+
+.purple {
+  color: rgb(216, 21, 86);
+  font-size: 2em;
+}

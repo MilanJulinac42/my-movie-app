@@ -1,0 +1,29 @@
+.person-details {
+  padding-top: 1.5em;
+}
+
+.person-details h3 {
+  font-size: 2em;
+}
+
+.person-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.person-details ul li {
+  margin-top: 1em;
+}
+
+.person-details ul li p {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 0;
+}
+
+.person-details ul li h5 {
+  font-size: 1.3em;
+  padding: 0;
+  margin: 0;
+}

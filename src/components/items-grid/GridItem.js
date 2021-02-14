@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import axios from "axios";
+import myInitValues from "../../initValues";
+import { Link } from "react-router-dom";
 
 const Number = styled.h3`
   position: absolute;
@@ -41,6 +44,7 @@ const ItemContentDescription = styled.p`
   overflow: hidden;
   opacity: 0;
   transition: 2s;
+  margin-bottom: 20px;
 `;
 
 const ItemContentReleaseDate = styled.div`
@@ -118,7 +122,33 @@ const ItemContainer = styled.div`
   }
 `;
 
-function GridItem({ item, index, setTest }) {
+function GridItem({ item, setEntity }) {
+  const [personData, setPersonData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [entityType, setEntityType] = useState("");
+
+  const getPersonData = async (id) => {
+    setIsLoading(true);
+    const result = await axios(
+      `https://api.themoviedb.org/3/person/${id}?api_key=${myInitValues.API_KEY}&language=${item.LANGUAGE}`
+    );
+    setPersonData(result);
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    if (item.gender) {
+      getPersonData(item.id);
+    }
+    if (item.first_air_date || item.first_air_date === "") {
+      setEntityType("tv");
+    } else if (item.release_date || item.release_date === "") {
+      setEntityType("movie");
+    } else {
+      setEntityType("person");
+    }
+  }, []);
+
   function renderScore() {
     if (item.vote_average || item.vote_average === 0) {
       return (
@@ -127,8 +157,6 @@ function GridItem({ item, index, setTest }) {
           <ItemContentScore>Score:</ItemContentScore>
         </>
       );
-    } else {
-      return <p>{item.gender}</p>;
     }
   }
 
@@ -136,34 +164,57 @@ function GridItem({ item, index, setTest }) {
     if (item.release_date) {
       return (
         <ItemContentReleaseDate>
-          <p>Release date:</p>
+          <p>Release date :</p>
           <p>{item.release_date}</p>
+        </ItemContentReleaseDate>
+      );
+    } else if (item.gender && !isLoading) {
+      return (
+        <ItemContentReleaseDate>
+          <p>Born :</p>
+          <p>{personData.data.birthday}</p>
         </ItemContentReleaseDate>
       );
     }
   }
 
-  function handleClick() {
-    let type = "";
-    if (item.first_air_date || item.first_air_date === "") {
-      type = "tv";
-    } else if (item.release_date || item.release_date === "") {
-      type = "movie";
+  function renderOverwiev() {
+    if (item.gender && !isLoading) {
+      return (
+        <ItemContentDescription>
+          {personData.data.biography}
+        </ItemContentDescription>
+      );
     } else {
-      type = "person";
+      return <ItemContentDescription>{item.overview}</ItemContentDescription>;
     }
-    setTest({ testType: type, testId: item.id });
   }
+
+  // function handleClick() {
+  //   let type = "";
+  //   if (item.first_air_date || item.first_air_date === "") {
+  //     type = "tv";
+  //   } else if (item.release_date || item.release_date === "") {
+  //     type = "movie";
+  //   } else {
+  //     type = "person";
+  //   }
+  //   setEntity({ entityType: type, entityId: item.id });
+  // }
   return (
-    <ItemContainer
-      image={item.poster_path ? item.poster_path : item.profile_path}
-      onClick={handleClick}
-    >
-      {renderScore()}
-      <ItemContentTitle>{item.title ? item.title : item.name}</ItemContentTitle>
-      <ItemContentDescription>{item.overview}</ItemContentDescription>
-      {renderDate()}
-    </ItemContainer>
+    <Link to={`/EntityPage/${entityType}/${item.id}`}>
+      <ItemContainer
+        image={item.poster_path ? item.poster_path : item.profile_path}
+        // onClick={handleClick}
+      >
+        {renderScore()}
+        <ItemContentTitle>
+          {item.title ? item.title : item.name}
+        </ItemContentTitle>
+        {renderOverwiev()}
+        {renderDate()}
+      </ItemContainer>
+    </Link>
   );
 }
 

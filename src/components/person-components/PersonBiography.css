@@ -1,0 +1,24 @@
+.poster-biography {
+  display: flex;
+  padding-top: 5em;
+  gap: 2em;
+}
+
+.poster-biography img {
+  max-width: 350px;
+  border-radius: 20px;
+}
+
+.poster-biography h3 {
+  font-size: 2em;
+}
+
+.poster-biography h1 {
+  font-size: 3em;
+}
+
+.poster-biography p {
+  font-size: 1.3em;
+  padding-left: 1em;
+  padding-right: 6em;
+}
