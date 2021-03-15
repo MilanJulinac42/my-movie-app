@@ -7,7 +7,7 @@
   box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000,
     5px 5px 15px 5px rgba(0, 0, 0, 0);
   text-align: center;
-  width: 100%;
+
   box-sizing: border-box;
 }
 
@@ -49,4 +49,25 @@
 .purple {
   color: rgb(216, 21, 86);
   font-size: 2em;
+}
+
+@media screen and (max-width: 1200px) {
+  .rating-field {
+    padding: 1em;
+  }
+  .icon {
+    font-size: 1.5em;
+  }
+  .rating-field h3 {
+    font-size: 1em;
+  }
+  .rating-field p {
+    font-size: 1em;
+  }
+  .value {
+    gap: 1em;
+  }
+  .arrow {
+    font-size: 1em;
+  }
 }

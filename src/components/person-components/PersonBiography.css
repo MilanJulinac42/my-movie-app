@@ -1,12 +1,21 @@
 .poster-biography {
   display: flex;
-  padding-top: 5em;
+  padding-top: 2em;
+  padding-right: 1em;
+  padding-left: 1em;
   gap: 2em;
+  justify-content: space-around;
+  overflow-x: hidden;
 }
 
-.poster-biography img {
-  max-width: 350px;
+.img-container img {
+  width: 100%;
   border-radius: 20px;
+  height: auto;
+}
+
+.img-container {
+  width: 470px;
 }
 
 .poster-biography h3 {
@@ -21,4 +30,47 @@
   font-size: 1.3em;
   padding-left: 1em;
   padding-right: 6em;
+}
+
+.biography-section {
+  width: 80%;
+}
+
+@media screen and (max-width: 800px) {
+  .poster-biography {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0em;
+  }
+  .biography-section {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .biography-section p {
+    font-size: 0.9em;
+    padding: 0;
+    margin: 0;
+  }
+  .biography-section h1 {
+    font-size: 1em;
+  }
+  .biography-section h3 {
+    font-size: 1em;
+  }
+  .img-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .img-container img {
+    width: 100%;
+    margin: auto;
+  }
+  .img-container h1 {
+    font-size: 1.5em;
+  }
+  .biography-section {
+    width: 100%;
+  }
 }

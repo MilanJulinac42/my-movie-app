@@ -4,6 +4,7 @@ import Search from "./Search";
 import Grid from "./items-grid/Grid";
 import FilterGrid from "./filter-grid/FilterGrid";
 import myInitValues from "../initValues";
+import loading from "../images/loadinggif.gif";
 
 function SearchPage() {
   const [items, setItems] = useState([]);
@@ -35,7 +36,9 @@ function SearchPage() {
       if (!isLoading) {
         return <Grid items={items} setEntity={setEntity} />;
       } else {
-        return <h1>LOADING...</h1>;
+        return (
+          <img style={{ margin: "auto", display: "block" }} src={loading} />
+        );
       }
     }
   };

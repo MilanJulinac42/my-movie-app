@@ -1,0 +1,43 @@
+.credit-item {
+  margin-left: 1em;
+  display: flex;
+  font-size: 1.2em;
+  gap: 8px;
+  position: relative;
+}
+
+.credit-item p {
+  margin-top: 3px;
+}
+
+.credit-item::before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  top: 10px;
+  left: -10px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.credit-flex {
+  display: flex;
+  gap: 0.3em;
+  flex-wrap: wrap;
+  padding-right: 1em;
+}
+
+.credit-link {
+  text-decoration: none;
+  color: white;
+}
+
+@media screen and (max-width: 800px) {
+  .credit-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-bottom: 1em;
+  }
+}

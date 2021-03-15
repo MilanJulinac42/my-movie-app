@@ -44,7 +44,7 @@ function RatingField({ value, type }) {
       <h3>{headline}</h3>
       <div className="value">
         <FontAwesomeIcon className={`icon ${color}`} icon={icon} />
-        <i className="fas fa-long-arrow-alt-right"></i>
+        <i className="fas fa-long-arrow-alt-right arrow"></i>
         <p>
           {headline === "Profit"
             ? ~~(value / 1000000) + "m"

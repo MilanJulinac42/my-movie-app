@@ -13,3 +13,13 @@
   margin: 0;
   margin-top: 1em;
 }
+
+@media screen and (max-width: 800px) {
+  .overwiev-content {
+    border: none;
+    font-size: 0.9em;
+  }
+  .overwiev-headline {
+    font-size: 1.2em;
+  }
+}

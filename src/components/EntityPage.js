@@ -61,20 +61,18 @@ function EntityPage() {
     } else {
       return (
         <>
+          <EntityHeading name={details.name} params={params} />
           <PersonBiography
             profile={details.profile_path}
-            name={details.name}
             biography={details.biography}
-          />
-          <PersonDetails
             birthday={details.birthday}
             deathday={details.deathday}
             knownFor={details.known_for_department}
             popularity={details.popularity}
             placeOfBirth={details.place_of_birth}
             gender={details.gender}
+            params={params}
           />
-          <PersonCredits params={params} />
         </>
       );
     }

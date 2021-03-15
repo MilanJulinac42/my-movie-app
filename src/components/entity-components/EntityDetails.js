@@ -19,11 +19,13 @@ function EntityDetails({
   return (
     <div className="trailer-info-section">
       <div className="poster-genre">
-        <img
-          src={`https://image.tmdb.org/t/p/original/${poster}`}
-          alt="poster"
-          className="poster"
-        />
+        <div className="helper">
+          <img
+            src={`https://image.tmdb.org/t/p/original/${poster}`}
+            alt="poster"
+            className="poster"
+          />
+        </div>
         <Genre genres={genres} />
         <div className="absolute-circle"></div>
       </div>

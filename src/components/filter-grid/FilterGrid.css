@@ -44,3 +44,12 @@
 .filter-box-button:hover::after {
   width: 110%;
 }
+
+@media screen and (max-width: 780px) {
+  .filter-box {
+    flex-wrap: wrap;
+  }
+  .filter-box-button {
+    font-size: 1em;
+  }
+}

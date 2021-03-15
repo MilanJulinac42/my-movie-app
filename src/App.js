@@ -5,8 +5,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import EntityPage from "./components/EntityPage";
 
 function App() {
-  // const [entity, setEntity] = useState({ entityType: "", entityId: 0 });
-
   return (
     <Router>
       <div className="App">

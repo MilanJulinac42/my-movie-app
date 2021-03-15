@@ -3,3 +3,39 @@
   margin: auto;
   color: #fff;
 }
+
+@media screen and (max-width: 800px) {
+  .container {
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.home-link-container {
+  width: 100%;
+  background-color: black;
+  box-sizing: border-box;
+}
+
+.home-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-link p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}

@@ -1,5 +1,7 @@
 .person-details {
   padding-top: 1.5em;
+  align-self: flex-start;
+  justify-self: flex-start;
 }
 
 .person-details h3 {
@@ -10,6 +12,8 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .person-details ul li {
@@ -26,4 +30,16 @@
   font-size: 1.3em;
   padding: 0;
   margin: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .person-details ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+  .person-details ul li {
+    margin-top: 0em;
+  }
 }

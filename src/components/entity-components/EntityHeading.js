@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import SearchPage from "../SearchPage";
 import "./EntityHeading.css";
+import { Link } from "react-router-dom";
 
-function EntityHeading({ title, runtime, releaseDate, params }) {
+function EntityHeading({ title, runtime, releaseDate, params, name }) {
   const [lastAirDateOrDuration, setlastAirDateOrDuration] = useState("");
 
   const convertMinutes = () => {
@@ -22,21 +25,29 @@ function EntityHeading({ title, runtime, releaseDate, params }) {
 
   return (
     <div className="heading">
-      <i className="fas fa-film"></i>
-      <h1>{title}</h1>
-      <div className="additional-info ">
-        <i className="far fa-calendar-alt"></i>
-        <p>{releaseDate}</p>
-        <i className="fas fa-minus"></i>
-        <i
-          className={
-            params.entityType === "movie"
-              ? "far fa-clock"
-              : "far fa-calendar-alt"
-          }
-        ></i>
-        <p>{lastAirDateOrDuration}</p>
+      <div className="flex">
+        <Link to={"/"}>
+          <i className="fas fa-film"></i>
+        </Link>
+        <h1>{title ? title : name}</h1>
       </div>
+      {title ? (
+        <div className="additional-info ">
+          <i className="far fa-calendar-alt"></i>
+          <p>{releaseDate}</p>
+          <i className="fas fa-minus"></i>
+          <i
+            className={
+              params.entityType === "movie"
+                ? "far fa-clock"
+                : "far fa-calendar-alt"
+            }
+          ></i>
+          <p>{lastAirDateOrDuration}</p>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

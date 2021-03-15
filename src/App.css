@@ -1,6 +1,6 @@
 .App-header {
   margin: auto;
-  min-height: 50vh;
+  /* min-height: 50vh; */
   color: white;
   background: linear-gradient(#171652, #1c4b63b3),
     url("images/nicolas-j-leclercq-qDLLP0yP7FU-unsplash.jpg") center/cover
@@ -51,4 +51,26 @@
 
 a {
   text-decoration: none;
+}
+
+@media screen and (max-width: 780px) {
+  .header-content {
+    width: 90%;
+  }
+  .header-content h1 {
+    font-size: 2em;
+  }
+  .header-content p {
+    font-size: 1.2em;
+  }
+  .flex-horizontal {
+    height: 2em;
+  }
+  .flex-horizontal button {
+    font-size: 0.8em;
+    width: 100px;
+  }
+  .flex-horizontal input {
+    font-size: 0.8em;
+  }
 }

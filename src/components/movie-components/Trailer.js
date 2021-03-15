@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import "./Trailer.css";
 
 function Trailer({ params }) {
   const [link, setLink] = useState("");
@@ -24,16 +25,15 @@ function Trailer({ params }) {
   }, []);
 
   return (
-    <>
+    <div className="trailer-container">
       <iframe
-        width="1020"
-        height="573.75"
         src={`https://www.youtube.com/embed/${link}`}
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
+        className="responsive-trailer"
       ></iframe>
-    </>
+    </div>
   );
 }
 

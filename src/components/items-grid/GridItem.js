@@ -16,7 +16,7 @@ const Number = styled.h3`
 
 const ItemContentScore = styled.p`
   position: absolute;
-  top: 25px;
+  top: 15px;
   left: 20px;
   color: white;
   opacity: 0;
@@ -29,10 +29,11 @@ const ItemContentScore = styled.p`
 const ItemContentTitle = styled.h2`
   position: relative;
   padding: 20px;
-  padding-top: 3em;
+  padding-top: 4em;
   color: white;
   opacity: 0;
   transition: 2s;
+  margin-bottom: 0px;
 `;
 
 const ItemContentDescription = styled.p`
@@ -45,6 +46,7 @@ const ItemContentDescription = styled.p`
   opacity: 0;
   transition: 2s;
   margin-bottom: 20px;
+  margin-top: 0px;
 `;
 
 const ItemContentReleaseDate = styled.div`
@@ -80,7 +82,7 @@ const ItemContainer = styled.div`
     min-width: 3.5em;
     max-width: 3.5em;
     transform: none;
-    top: 15px;
+    top: 0px;
     left: 75%;
     font-size: 3em;
     color: white;
@@ -190,22 +192,10 @@ function GridItem({ item, setEntity }) {
     }
   }
 
-  // function handleClick() {
-  //   let type = "";
-  //   if (item.first_air_date || item.first_air_date === "") {
-  //     type = "tv";
-  //   } else if (item.release_date || item.release_date === "") {
-  //     type = "movie";
-  //   } else {
-  //     type = "person";
-  //   }
-  //   setEntity({ entityType: type, entityId: item.id });
-  // }
   return (
     <Link to={`/EntityPage/${entityType}/${item.id}`}>
       <ItemContainer
         image={item.poster_path ? item.poster_path : item.profile_path}
-        // onClick={handleClick}
       >
         {renderScore()}
         <ItemContentTitle>
